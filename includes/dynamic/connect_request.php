@@ -8,7 +8,7 @@ $login = $_POST["login"];
 $password = $_POST["password"];
 $check = $_POST["check"];
 
-if($check=="Connect"){ // If the user really pushed the "Connect" button
+/*if($check=="Connect"){ // If the user really pushed the "Connect" button
 	// Connection to the database
 	require "../config/config.php";
 	$mysql = new MySQLi($server, $user, $pass, $base);
@@ -29,5 +29,28 @@ if($check=="Connect"){ // If the user really pushed the "Connect" button
 		} 
 		$mysql->close();
 	}
-}
+}*/
+
+// Connection to the database
+	require "../config/config.php";
+	$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
+	// Request to the database
+	
+	$request_login = $PDO->prepare('SELECT * FROM users WHERE login=:login AND password=:password');
+	$request_login->execute(array(
+		'login' => $login,
+		'password' => $password
+		));
+	if ($request_login->rowCount() > 0) {
+		$_SESSION['logged'] = 1;
+		$_SESSION['user'] = $login;
+		
+		$request_role = $PDO->query("SELECT role FROM users WHERE login='$login'");
+		if ($row = $request_role->fetch(PDO::FETCH_ASSOC)){
+			$_SESSION['role'] = $row['role'];
+		}
+		$request_role->closeCursor();
+	}
+
 ?>
+
