@@ -4,5 +4,5 @@ session_start();
 header("Location: index.php");
 unset($_SESSION["logged"]);
 unset($_SESSION["user"]);
-//unset($_SESSION["role"]); // To do
+unset($_SESSION["role"]);
 ?>

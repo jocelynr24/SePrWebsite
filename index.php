@@ -21,7 +21,7 @@
 				<center>
 					<?php
 						if (isset($_SESSION["logged"])){
-							echo "<h1>Welcome to the website, ".$_SESSION["user"]."!</h1>";
+							echo "<h1>Welcome to the website, ".$_SESSION["user"]." (".$_SESSION["role"].")!</h1>";
 						}
 						else{
 							echo "<h1>Welcome to the website, guest!</h1>";
