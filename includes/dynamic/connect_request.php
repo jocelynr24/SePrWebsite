@@ -8,7 +8,9 @@ $login = $_POST["login"];
 $password = $_POST["password"];
 $check = $_POST["check"];
 
-/*if($check=="Connect"){ // If the user really pushed the "Connect" button
+// If the user really pushed the "Connect" button
+if($check=="Connect"){
+/*  //MySQLi connect method
 	// Connection to the database
 	require "../config/config.php";
 	$mysql = new MySQLi($server, $user, $pass, $base);
@@ -31,16 +33,19 @@ $check = $_POST["check"];
 	}
 }*/
 
-// Connection to the database
+	// PDO connect method
+	// Connection to the database
 	require "../config/config.php";
 	$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
-	// Request to the database
 	
+	// Request to the database
 	$request_login = $PDO->prepare('SELECT * FROM users WHERE login=:login AND password=:password');
 	$request_login->execute(array(
 		'login' => $login,
 		'password' => $password
 		));
+		
+	// Something found
 	if ($request_login->rowCount() > 0) {
 		$_SESSION['logged'] = 1;
 		$_SESSION['user'] = $login;
@@ -51,6 +56,8 @@ $check = $_POST["check"];
 		}
 		$request_role->closeCursor();
 	}
+	
+}
 
 ?>
 
