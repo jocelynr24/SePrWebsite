@@ -33,7 +33,7 @@ if($check=="Connect"){
 	}
 }*/
 
-	// PDO connect method
+	// PDO connect method (safer)
 	// Connection to the database
 	require "../config/config.php";
 	$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
@@ -45,7 +45,7 @@ if($check=="Connect"){
 		'password' => $password
 		));
 		
-	// Something found
+	// Something found in the database
 	if ($request_login->rowCount() > 0) {
 		$_SESSION['logged'] = 1;
 		$_SESSION['user'] = $login;
@@ -56,7 +56,6 @@ if($check=="Connect"){
 		}
 		$request_role->closeCursor();
 	}
-	
 }
 
 ?>

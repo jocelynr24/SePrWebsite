@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Home</title>
+		<title>Profile</title>
 		<link rel="stylesheet" href="style/style.css" type="text/css" />
 	</head>
 	
@@ -11,7 +11,7 @@
 			<center>
 				<img src="style/img/logo.png" style="margin: 10px;"></img>
 			</center>
-
+			
 			<?php include('includes/static/menu.php'); ?>
 
 			<table width=930 height=200 border=0><tr><td align=left>
@@ -19,19 +19,17 @@
 				<br/><br/>
 		
 				<center>
-					<?php
-						if (isset($_SESSION["logged"])){
-							echo "<h1>Welcome to the website, ".$_SESSION["user"]."!</h1>";
-						}
-						else{
-							echo "<h1>Welcome to the website, guest!</h1>";
-						}
-						echo "</div>";
-					?>
+					<h1>Manage your profile</h1>
 				</center>
 				
-				<p>Short description of the website.</p>
-
+				<?php
+					if (isset($_SESSION["logged"])){
+						echo '<p>Here is the profile page of '.$_SESSION["user"].'.</p>';
+					} else {
+						echo '<center><p>You must be logged in before accessing this page!<br/><a href="connect.php">Connect</a></p></center>';
+					}
+				?>
+				
 				<br/><br/>
 
 			</td></tr></table>

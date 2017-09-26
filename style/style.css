@@ -45,7 +45,7 @@ h1 {
 	background: -moz-linear-gradient(#686868, #BCBCBC);
 	background: linear-gradient(#686868, #BCBCBC);
 	border: 2px solid black;
-	border-radius: 5px 5px 5px 5px;
+	/*border-radius: 5px 5px 5px 5px;*/
 	box-shadow:0 0 10px 5px #555555;
 	font-size: 16px;
 	color: black;
@@ -65,7 +65,7 @@ h1 {
 .menu {
 	border: 2px solid black;
 	background-color: #404040;
-	border-radius: 5px 5px 5px 5px;
+	/*border-radius: 5px 5px 5px 5px;*/
 	box-shadow: 12px 0 10px -5px #555555, -12px 0 10px -5px #555555;
 	width: 960px;
 	height: 30px;
@@ -146,12 +146,12 @@ html>body #menu li ul ul {
 #menu a {
 	display : block; 
 	padding : 0; 
-	background : #486BA2; 
+	background : #53295B;
 	color : #fff; 
 	text-decoration : none; 
 	width : 107px;
 	border-radius: 10px;
-	border : 1px solid #BACBE6;
+	border : 1px solid #3F1547;
 	}
 	
 ...
@@ -172,7 +172,7 @@ html>body #menu li ul ul {
 
 #menu a:hover {
     color : #fff;
-    background : #BACBE6;
+    background : #714779;
 	border : 1px solid #fff;
 	}
 
