@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>Profile</title>
@@ -22,13 +23,73 @@
 					<h1>Manage your profile</h1>
 				</center>
 				
+				<!--<?php
+					if(isset($_GET['msg'])){
+						echo '<script>alert('.$_GET['msg'].');</script>';
+					}
+				?>-->
+				
+				<center>
 				<?php
+					include('includes/dynamic/get_request.php');
 					if (isset($_SESSION["logged"])){
-						echo '<p>Here is the profile page of '.$_SESSION["user"].'.</p>';
+						echo '
+						<form action="includes/dynamic/update_profile.php" method="post" name="changeProfile" enctype="multipart/form-data">
+							<table>
+							<tr>
+								<td class="texte">Login:</td>
+									<td><input type="text" placeholder="Login" name="login" value='.$_SESSION["user"].' disabled></td>
+								</tr>
+								<td class="texte">First name:</td>
+									<td><input type="text" placeholder="First name" name="firstname" value='.$firstname.' disabled></td>
+								</tr>
+								<td class="texte">Last name:</td>
+									<td><input type="text" placeholder="Last name" name="lastname" value='.$lastname.' disabled></td>
+								</tr>
+								<tr>
+									<td class="texte">Change email:</td>
+									<td><input type="text" placeholder="Email" name="email" value='.$email.'></td>
+								</tr>
+								<tr>
+									<td class="texte">Change password:</td>
+									<td><input type="password" placeholder="Password" name="password"></td>
+								</tr>   
+								<tr>
+									<td class="texte">Confirm password:</td>
+									<td><input type="password" placeholder="Confirm password" name="confirm_password"></td>
+								</tr>
+								<tr>
+									<td class="texte">Change picture:</td>
+						';
+						if(!empty($picture_name)){
+							//$picture_path = str_replace("../", "includes/", $picture_path);
+							$picture_path = "uploads/profile/".$picture_name;
+							echo '	<td><img src='.$picture_path.' style="width:172px;height:100px;>
+										<br/><input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+										<br/><input type="file" name="file_to_upload" style="width: 172px;"></td>
+								</tr>';
+						} else {
+							echo '	<td><input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+										<input type="file" name="file_to_upload" style="width: 172px;"></td>
+								</tr>';
+						}
+						echo '
+								<tr>
+									<td class="texte">Remove picture:</td>
+									<td><input type="checkbox" name="remove_picture" value="yes"><small>I want to remove my picture</small></td>
+								</tr>
+								<tr>
+									<td align= "center" colspan="2">
+										<br/><input type="submit" name="check"  value="Update"/>
+									</td>
+								</tr>
+							</table>
+						</form>';
 					} else {
-						echo '<center><p>You must be logged in before accessing this page!<br/><a href="connect.php">Connect</a></p></center>';
+						echo '<p>You must be logged in before accessing this page!<br/><a href="connect.php">Connect</a></p>';
 					}
 				?>
+				</center>
 				
 				<br/><br/>
 

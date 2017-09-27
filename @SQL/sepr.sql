@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2017 at 05:48 PM
+-- Generation Time: Sep 27, 2017 at 03:28 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -76,20 +76,21 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `login` varchar(30) DEFAULT NULL,
   `password` char(20) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
   `role` int(1) DEFAULT NULL,
   `firstname` varchar(100) DEFAULT NULL,
   `lastname` varchar(100) DEFAULT NULL,
-  `picture_path` varchar(100) DEFAULT NULL
+  `picture_name` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `password`, `role`, `firstname`, `lastname`, `picture_path`) VALUES
-(1, 'admin', 'admin', 1, 'Michel', 'Dupont', NULL),
-(2, 'teacher', 'teacher', 2, 'Zakia', 'Kazi-Aoul', NULL),
-(3, 'student', 'student', 3, 'Thierry', 'Henry', NULL);
+INSERT INTO `users` (`id`, `login`, `password`, `email`, `role`, `firstname`, `lastname`, `picture_name`) VALUES
+(1, 'admin', 'admin', 'Michel.Dupont@fontys.nl', 1, 'Michel', 'Dupont', NULL),
+(2, 'teacher', 'teacher', 'Zakia.Kazi-Aoul@fontys.nl', 2, 'Zakia', 'Kazi-Aoul', NULL),
+(3, 'student', 'student', 'Thierry.Henry@fontys.nl', 3, 'Thierry', 'Henry', NULL);
 
 -- --------------------------------------------------------
 

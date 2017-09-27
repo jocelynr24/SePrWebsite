@@ -1,3 +1,15 @@
+Version 0.3.0 - 27/09/2017
+==========================
++ Added profile page settings
+	> Possibility to change password
+	> Possibility to change email
+	> Possibility to change picture
+	> Possibility to remove picture
++ Added temporary content on the main page
+= Changed a part of the style
+= Updated the database structure
+
+
 Version 0.2.0 - 26/09/2017
 ==========================
 + Added .htaccess file
