@@ -4,30 +4,29 @@
 		<ul id="menu">
 
 			<?php
-				session_start();
 				if (isset($_SESSION["logged"])){
 					if($_SESSION["role"] == 1){
 						echo "<li><a href=\"index.php\">Home</a></li>";
-						echo "<li><a href=\"courses.php\">Courses</a></li>";
+						echo "<li><a href=\"list.php\">Courses list</a></li>";
 						echo "<li><a href=\"admin.php\">Manage website</a></li>";
 						echo "<li><a href=\"profile.php\">Profile</a></li>";
 						echo "<li><a href=\"disconnect.php\">Disconnect</a></li>";
 					} else if($_SESSION["role"] == 2){
 						echo "<li><a href=\"index.php\">Home</a></li>";
-						echo "<li><a href=\"courses.php\">Courses</a></li>";
+						echo "<li><a href=\"list.php\">Courses list</a></li>";
 						echo "<li><a href=\"grade.php\">Manage grades</a></li>";
 						echo "<li><a href=\"profile.php\">Profile</a></li>";
 						echo "<li><a href=\"disconnect.php\">Disconnect</a></li>";
 					} else {
 						echo "<li><a href=\"index.php\">Home</a></li>";
-						echo "<li><a href=\"courses.php\">Courses</a></li>";
+						echo "<li><a href=\"list.php\">Courses list</a></li>";
 						echo "<li><a href=\"results.php\">My Results</a></li>";
 						echo "<li><a href=\"profile.php\">Profile</a></li>";
 						echo "<li><a href=\"disconnect.php\">Disconnect</a></li>";
 					}
 				} else {
 					echo "<li><a href=\"index.php\">Home</a></li>";
-					echo "<li><a href=\"courses.php\">Courses</a></li>";
+					echo "<li><a href=\"list.php\">Courses list</a></li>";
 					echo "<li><a href=\"results.php\">My Results</a></li>";
 					echo "<li><a href=\"profile.php\">Profile</a></li>";
 					echo "<li><a href=\"connect.php\">Connect</a></li>";

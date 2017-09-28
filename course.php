@@ -20,12 +20,25 @@
 			<table width=930 height=200 border=0><tr><td align=left>
 
 				<br/><br/>
-		
-				<center>
-					<h1>Courses</h1>
-				</center>
 				
-				<p>List of the courses (available for everyone).</p>
+				<?php
+					require "includes/config/config.php";
+					$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
+
+					$request = $PDO->prepare('SELECT * FROM course WHERE id=:id');
+					$request->execute(array(
+						'id' => $_GET['id']
+						));
+					if ($row = $request->fetch(PDO::FETCH_ASSOC)){
+						echo "<center><h1>".$row['name']."</h1></center>";
+						echo $row['description_long'];
+					} else {
+						echo "This course does not exist.";
+					}
+					$request->closeCursor();
+				?>
+				
+				<br/><a href="list.php">List of the courses</a>
 				
 				<br/><br/>
 

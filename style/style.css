@@ -1,4 +1,4 @@
-		/* Start of the main style */
+/* Start of the main style */
 
 body{
 	background-image: url('img/background.png');
@@ -13,11 +13,12 @@ a img {
 
 a:hover {
 	text-decoration: underline;
-	color: #1A00FF;
+	color: #ffffff;
 	}
 
 a {
 	text-decoration: none;
+	color: #ffffff;
 	}
 	
 fieldset {
@@ -34,18 +35,10 @@ legend {
 	font-size: 18px;
 	color: white;
 	}
-	
-h1 {
-	/* To define (if needed) */
-	}
 
 .page{
 	background: #A0A0A0;
-	/*background: -webkit-gradient(linear, 0 0, 0 bottom, from(#686868), to(#BCBCBC));
-	background: -moz-linear-gradient(#686868, #BCBCBC);
-	background: linear-gradient(#686868, #BCBCBC);*/
 	border: 1px solid black;
-	/*border-radius: 5px 5px 5px 5px;*/
 	box-shadow:0 0 10px 5px #555555;
 	font-size: 16px;
 	color: black;
@@ -58,18 +51,16 @@ h1 {
 	z-index: 0;
 	}
 	
-		/* End of the main style */
+/* End of the main style */
 
-		/* Start of the menu */
+/* Start of the menu */
 
 .menu {
-	border: 1px solid black;
+	border: 0px solid black;
 	background-color: #787878;
-	/*border-radius: 5px 5px 5px 5px;*/
-	/*box-shadow: 12px 0 10px -5px #555555, -12px 0 10px -5px #555555;*/
 	width: 954px;
 	height: 30px;
-	right: -1px;
+	right: 0px; /* Or -1px with 1px border */
 	position: absolute;
 	font-size: 16px;
 	color: black;
@@ -78,35 +69,35 @@ h1 {
 	}
 	
 #menu, #menu ul {
-	padding : 0;
-	margin : 0;
-	list-style : none;
-	line-height : 21px;
-	text-align : center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 21px;
+	text-align: center;
 	}
 
 #menu {
-	font-weight : bold;
-	font-family : Arial;
-	font-size : 12px;
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 12px;
 	}
 
 #menu a {
-	display : block;
-	padding : 0;
-	background : #000;    
-	color : #fff;
-	text-decoration : none;
-	width : 144px;
+	display: block;
+	padding: 0;
+	background: #000;    
+	color: #fff;
+	text-decoration: none;
+	width: 144px;
 	}
 
 #menu li { 
-	float : left; 
-	border-right : 1px solid #fff;
+	float: left; 
+	border-right: 1px solid #fff;
 	}
 
 html>body #menu li {
-		border-right: 1px solid transparent ;
+	border-right: 1px solid transparent ;
 	}
 
 #menu li ul{ 
@@ -117,7 +108,7 @@ html>body #menu li {
 
 
 #menu li ul li{
-	border-top : 1px solid #fff;
+	border-top: 1px solid #fff;
 	}
 
 html>body #menu li ul li {
@@ -144,14 +135,14 @@ html>body #menu li ul ul {
 	}
 
 #menu a {
-	display : block; 
-	padding : 0; 
-	background : #53295B;
-	color : #fff; 
-	text-decoration : none; 
-	width : 107px;
-	border-radius: 10px;
-	border : 1px solid #3F1547;
+	display: block; 
+	padding: 0; 
+	background: #53295B;
+	color: #fff; 
+	text-decoration: none; 
+	width: 107px;
+	border-radius: 0px;
+	border: 1px solid #3F1547;
 	}
 	
 ...
@@ -165,8 +156,8 @@ html>body #menu li ul ul {
 ...
 
 #menu li ul ul {
-    margin    : -22px 0 0 144px ; 
-    border-left     : 1px solid #fff ;
+    margin: -22px 0 0 144px ; 
+    border-left: 1px solid #fff ;
 	}
 
 
@@ -182,4 +173,29 @@ html>body #menu li ul ul {
 	width: 550px;
 	}
 
-		/* End of the menu */
+/* End of the menu */
+
+/* Start of course list */
+
+.courses_table {
+	border: 1px solid #3F1547;
+	border-collapse: collapse;
+	width: 80%;
+	}
+	
+.courses_th {
+	border: 1px solid #3F1547;
+	padding: 5px;
+	background-color: #53295B;
+	color: #ffffff;
+	}
+	
+.courses_td {
+	border: 1px solid #3F1547;
+	padding: 5px;
+	text-align: left;
+	background-color: #714779;
+	color: #ffffff;
+	}
+
+/* End of course list */

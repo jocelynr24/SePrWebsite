@@ -35,15 +35,15 @@
 							<table>
 								<tr>
 									<td class="texte">Username:</td>
-									<td><input type="text" name="login"></td>
+									<td><input type="text" name="login" required></td>
 								</tr>    
 								<tr>
 									<td class="texte">Password:</td>
-									<td><input type="password" name="password"></td>
+									<td><input type="password" name="password" required></td>
 								</tr>
 								<tr>
 									<td align= "center" colspan="2">
-										<input type="submit" name="check"  value="Connect"/>
+										<br/><input type="submit" name="check"  value="Connect"/>
 									</td>
 								</tr>
 							</table>

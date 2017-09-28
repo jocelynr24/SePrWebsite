@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2017 at 03:28 PM
+-- Generation Time: Sep 28, 2017 at 04:28 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -30,17 +30,22 @@ USE `sepr`;
 
 CREATE TABLE `course` (
   `id` int(11) NOT NULL,
-  `Course_name` varchar(30) DEFAULT NULL,
-  `description` mediumtext
+  `name` varchar(30) DEFAULT NULL,
+  `description_short` text,
+  `description_long` text
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`id`, `Course_name`, `description`) VALUES
-(1, 'Quality Principle', 'This course is about to redact an essay'),
-(2, 'Secure Programming', 'This course is about to hack the government');
+INSERT INTO `course` (`id`, `name`, `description_short`, `description_long`) VALUES
+(1, 'Quality Principle', 'This course is about to redact an essay', '<p>Morbi aliquet id turpis id ornare. Donec nec mi nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id enim tortor. Vestibulum nec enim pellentesque, malesuada erat vel, ornare metus. Donec metus nulla, vulputate vel arcu non, blandit elementum nisi. Integer semper, nunc pharetra iaculis dapibus, metus quam blandit ligula, non dignissim neque est non mi.</p>\r\n\r\n<p>Donec sapien elit, faucibus sit amet porttitor quis, convallis ac velit. In velit nibh, euismod in lacinia ut, ornare nec lectus. Donec imperdiet dolor eu mollis pretium. Mauris congue maximus nulla lobortis sollicitudin. Morbi fermentum faucibus nulla non porta. Phasellus accumsan sodales nibh, in maximus libero consectetur id. Sed elit sem, sagittis id leo ut, volutpat elementum lacus.</p>'),
+(2, 'Secure Programming', 'This course is about to hack the government', '<p>Morbi aliquet id turpis id ornare. Donec nec mi nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id enim tortor. Vestibulum nec enim pellentesque, malesuada erat vel, ornare metus. Donec metus nulla, vulputate vel arcu non, blandit elementum nisi. Integer semper, nunc pharetra iaculis dapibus, metus quam blandit ligula, non dignissim neque est non mi.</p>\r\n\r\n<p>Donec sapien elit, faucibus sit amet porttitor quis, convallis ac velit. In velit nibh, euismod in lacinia ut, ornare nec lectus. Donec imperdiet dolor eu mollis pretium. Mauris congue maximus nulla lobortis sollicitudin. Morbi fermentum faucibus nulla non porta. Phasellus accumsan sodales nibh, in maximus libero consectetur id. Sed elit sem, sagittis id leo ut, volutpat elementum lacus.</p>'),
+(3, 'Service Oriented Techniques', 'This course is about creating services', '<p>Morbi aliquet id turpis id ornare. Donec nec mi nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id enim tortor. Vestibulum nec enim pellentesque, malesuada erat vel, ornare metus. Donec metus nulla, vulputate vel arcu non, blandit elementum nisi. Integer semper, nunc pharetra iaculis dapibus, metus quam blandit ligula, non dignissim neque est non mi.</p>\r\n\r\n<p>Donec sapien elit, faucibus sit amet porttitor quis, convallis ac velit. In velit nibh, euismod in lacinia ut, ornare nec lectus. Donec imperdiet dolor eu mollis pretium. Mauris congue maximus nulla lobortis sollicitudin. Morbi fermentum faucibus nulla non porta. Phasellus accumsan sodales nibh, in maximus libero consectetur id. Sed elit sem, sagittis id leo ut, volutpat elementum lacus.</p>'),
+(4, 'IT operations', 'This course is about IT operations', '<p>Morbi aliquet id turpis id ornare. Donec nec mi nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id enim tortor. Vestibulum nec enim pellentesque, malesuada erat vel, ornare metus. Donec metus nulla, vulputate vel arcu non, blandit elementum nisi. Integer semper, nunc pharetra iaculis dapibus, metus quam blandit ligula, non dignissim neque est non mi.</p>\r\n\r\n<p>Donec sapien elit, faucibus sit amet porttitor quis, convallis ac velit. In velit nibh, euismod in lacinia ut, ornare nec lectus. Donec imperdiet dolor eu mollis pretium. Mauris congue maximus nulla lobortis sollicitudin. Morbi fermentum faucibus nulla non porta. Phasellus accumsan sodales nibh, in maximus libero consectetur id. Sed elit sem, sagittis id leo ut, volutpat elementum lacus.</p>'),
+(5, 'Android', 'This course is about programming on Android devices', '<p>Morbi aliquet id turpis id ornare. Donec nec mi nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id enim tortor. Vestibulum nec enim pellentesque, malesuada erat vel, ornare metus. Donec metus nulla, vulputate vel arcu non, blandit elementum nisi. Integer semper, nunc pharetra iaculis dapibus, metus quam blandit ligula, non dignissim neque est non mi.</p>\r\n\r\n<p>Donec sapien elit, faucibus sit amet porttitor quis, convallis ac velit. In velit nibh, euismod in lacinia ut, ornare nec lectus. Donec imperdiet dolor eu mollis pretium. Mauris congue maximus nulla lobortis sollicitudin. Morbi fermentum faucibus nulla non porta. Phasellus accumsan sodales nibh, in maximus libero consectetur id. Sed elit sem, sagittis id leo ut, volutpat elementum lacus.</p>'),
+(6, 'Business Economics', 'This course is about business economics', '<p>Morbi aliquet id turpis id ornare. Donec nec mi nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras id enim tortor. Vestibulum nec enim pellentesque, malesuada erat vel, ornare metus. Donec metus nulla, vulputate vel arcu non, blandit elementum nisi. Integer semper, nunc pharetra iaculis dapibus, metus quam blandit ligula, non dignissim neque est non mi.</p>\r\n\r\n<p>Donec sapien elit, faucibus sit amet porttitor quis, convallis ac velit. In velit nibh, euismod in lacinia ut, ornare nec lectus. Donec imperdiet dolor eu mollis pretium. Mauris congue maximus nulla lobortis sollicitudin. Morbi fermentum faucibus nulla non porta. Phasellus accumsan sodales nibh, in maximus libero consectetur id. Sed elit sem, sagittis id leo ut, volutpat elementum lacus.</p>');
 
 -- --------------------------------------------------------
 
@@ -74,13 +79,13 @@ CREATE TABLE `grade` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `login` varchar(30) DEFAULT NULL,
+  `login` char(20) DEFAULT NULL,
   `password` char(20) DEFAULT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` char(50) DEFAULT NULL,
   `role` int(1) DEFAULT NULL,
-  `firstname` varchar(100) DEFAULT NULL,
-  `lastname` varchar(100) DEFAULT NULL,
-  `picture_name` varchar(100) DEFAULT NULL
+  `firstname` char(20) DEFAULT NULL,
+  `lastname` char(20) DEFAULT NULL,
+  `picture_name` char(50) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -148,7 +153,7 @@ ALTER TABLE `user_has_grade`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `grade`
 --

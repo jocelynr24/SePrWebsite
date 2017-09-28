@@ -33,38 +33,37 @@
 				
 				<center>
 				<?php
-					include('includes/dynamic/get_request.php');
+					include('includes/dynamic/profile_request.php');
 					if (isset($_SESSION["logged"])){
 						echo '
-						<form action="includes/dynamic/update_profile.php" method="post" name="changeProfile" enctype="multipart/form-data">
+						<form action="includes/dynamic/profile_update.php" method="post" name="changeProfile" enctype="multipart/form-data">
 							<table>
-							<tr>
-								<td class="texte">Login:</td>
+								<tr>
+									<td>Login:</td>
 									<td><input type="text" placeholder="Login" name="login" value='.$_SESSION["user"].' disabled></td>
 								</tr>
-								<td class="texte">First name:</td>
+									<td>First name:</td>
 									<td><input type="text" placeholder="First name" name="firstname" value='.$firstname.' disabled></td>
 								</tr>
-								<td class="texte">Last name:</td>
+									<td>Last name:</td>
 									<td><input type="text" placeholder="Last name" name="lastname" value='.$lastname.' disabled></td>
 								</tr>
 								<tr>
-									<td class="texte">Change email:</td>
-									<td><input type="text" placeholder="Email" name="email" value='.$email.'></td>
+									<td>Change email:</td>
+									<td><input type="text" placeholder="Email" name="email" value='.$email.' required></td>
 								</tr>
 								<tr>
-									<td class="texte">Change password:</td>
-									<td><input type="password" placeholder="Password" name="password"></td>
+									<td>Change password:</td>
+									<td><input type="password" placeholder="Password (6 char. min.)" name="password" pattern=".{6,20}"></td>
 								</tr>   
 								<tr>
-									<td class="texte">Confirm password:</td>
-									<td><input type="password" placeholder="Confirm password" name="confirm_password"></td>
+									<td>Confirm password:</td>
+									<td><input type="password" placeholder="Confirm password" name="confirm_password" pattern=".{6,12}"></td>
 								</tr>
 								<tr>
-									<td class="texte">Change picture:</td>
+									<td>Change picture:</td>
 						';
 						if(!empty($picture_name)){
-							//$picture_path = str_replace("../", "includes/", $picture_path);
 							$picture_path = "uploads/profile/".$picture_name;
 							echo '	<td><img src='.$picture_path.' style="width:172px;height:100px;>
 										<br/><input type="hidden" name="MAX_FILE_SIZE" value="10000000">
@@ -77,7 +76,7 @@
 						}
 						echo '
 								<tr>
-									<td class="texte">Remove picture:</td>
+									<td>Remove picture:</td>
 									<td><input type="checkbox" name="remove_picture" value="yes"><small>I want to remove my picture</small></td>
 								</tr>
 								<tr>
