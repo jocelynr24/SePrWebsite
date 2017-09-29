@@ -26,9 +26,18 @@
 				</center>
 				
 				<center>
+					<?php
+						if(isset($_SESSION["ack_connect"])){
+							echo '<div class="acknowledge">'.$_SESSION["ack_connect"].'</div><br/>';
+							unset($_SESSION["ack_connect"]);
+						}
+					?>
+				</center>
+				
+				<center>
 				<?php
 					if (isset($_SESSION["logged"])){
-						echo 'You are already logged as <b>'.$_SESSION['user'].'</b>!<br/><a href="disconnect.php">Disconnect</a>';
+						echo 'You are already logged as <b>'.$_SESSION['user'].'</b>!<br/><a href="index.php">Go to home page</a><br/><a href="disconnect.php">Disconnect</a>';
 					} else {
 						echo '
 						<form action="includes/dynamic/connect_request.php" method="post" name="identification">

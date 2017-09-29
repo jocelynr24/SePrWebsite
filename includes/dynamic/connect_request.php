@@ -1,7 +1,8 @@
 <?php
 session_start();
-// Go back to the index
-header("Location: ../../index.php");
+// Go back to the connect page
+header("Location: ../../connect.php");
+
   
 // Retrieve the data
 $login = $_POST["login"];
@@ -32,6 +33,10 @@ if($check=="Connect"){
 			$_SESSION['role'] = $row['role'];
 		}
 		$request_role->closeCursor();
+	}
+	
+	if($_SESSION['logged'] != 1){
+		$_SESSION["ack_connect"] = "Bad login and password";
 	}
 }
 

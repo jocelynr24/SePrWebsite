@@ -25,11 +25,20 @@
 					<h1>Manage your profile</h1>
 				</center>
 				
-				<!--<?php
-					if(isset($_GET['msg'])){
-						echo '<script>alert('.$_GET['msg'].');</script>';
-					}
-				?>-->
+				<center>
+					<?php
+						if(isset($_SESSION["ack_emlpsw"])){
+							echo '<div class="acknowledge">'.$_SESSION["ack_emlpsw"];
+							unset($_SESSION["ack_emlpsw"]);
+						}
+						if (isset($_SESSION["ack_pic"])){
+							echo '<br/>'.$_SESSION["ack_pic"].'</div><br/>';
+							unset($_SESSION["ack_pic"]);
+						} else {
+							echo '</div><br/>';
+						}
+					?>
+				</center>
 				
 				<center>
 				<?php
@@ -77,7 +86,7 @@
 						echo '
 								<tr>
 									<td>Remove picture:</td>
-									<td><input type="checkbox" name="remove_picture" value="yes"><small>I want to remove my picture</small></td>
+									<td><input type="checkbox" name="file_to_remove" value="yes"><small>I want to remove my picture</small></td>
 								</tr>
 								<tr>
 									<td align= "center" colspan="2">

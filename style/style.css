@@ -51,6 +51,15 @@ legend {
 	z-index: 0;
 	}
 	
+.acknowledge{
+	border: 1px solid #3F1547;
+	background-color: #53295B;
+	width: 300px;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+}
+	
 /* End of the main style */
 
 /* Start of the menu */
