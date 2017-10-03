@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<title>Profile</title>
+		<title>Course detail</title>
 		<link rel="stylesheet" href="style/style.css" type="text/css" />
 	</head>
 	
@@ -21,6 +21,11 @@
 
 				<br/><br/>
 				
+				<center>
+					<h1>About a course</h1>
+				</center>
+				
+				<center>
 				<?php
 					require "includes/config/config.php";
 					$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
@@ -30,15 +35,23 @@
 						'id' => $_GET['id']
 						));
 					if ($row = $request->fetch(PDO::FETCH_ASSOC)){
-						echo "<center><h1>".$row['name']."</h1></center>";
-						echo $row['description_long'];
+						echo '
+							<table class="table_style">
+								<tr class="table_tr">
+									<th class="table_th">'.$row['name'].'</th>
+								</tr>
+								<tr>
+									<td class="table_td">'.$row['description_long'].'</td>
+								</tr>
+							</table>
+						';
 					} else {
 						echo "This course does not exist.";
 					}
 					$request->closeCursor();
 				?>
-				
-				<br/><a href="list.php">List of the courses</a>
+				<br/><a href="courselist.php"><div class="back">< Go back to the list of the courses</div></a>
+				</center>
 				
 				<br/><br/>
 

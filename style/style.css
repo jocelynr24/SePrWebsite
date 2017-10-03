@@ -22,19 +22,18 @@ a {
 	}
 	
 fieldset {
-	border: 1px solid black;
-	background-color: #486BA2;
+	border: 1px solid #3F1547;
+	background-color: #A379AB;
 	box-shadow: 0 0 10px #555555 inset;
-	width: 95%;
-	height: 100%;
-	border-radius: 20px;
-	margin: auto;
+	width: 40%;
 	}
 	
 legend {
+	margin-right: 50%;
 	font-size: 18px;
 	color: white;
 	}
+
 
 .page{
 	background: #A0A0A0;
@@ -59,7 +58,16 @@ legend {
 	color: white;
 	text-align: center;
 }
-	
+
+.back{
+	border: 1px solid #3F1547;
+	background-color: #53295B;
+	width: 300px;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+}
+
 /* End of the main style */
 
 /* Start of the menu */
@@ -184,22 +192,22 @@ html>body #menu li ul ul {
 
 /* End of the menu */
 
-/* Start of course list */
+/* Start of table */
 
-.courses_table {
+.table_style {
 	border: 1px solid #3F1547;
 	border-collapse: collapse;
 	width: 80%;
 	}
 	
-.courses_th {
+.table_th {
 	border: 1px solid #3F1547;
 	padding: 5px;
 	background-color: #53295B;
 	color: #ffffff;
 	}
 	
-.courses_td {
+.table_td {
 	border: 1px solid #3F1547;
 	padding: 5px;
 	text-align: left;
@@ -207,4 +215,4 @@ html>body #menu li ul ul {
 	color: #ffffff;
 	}
 
-/* End of course list */
+/* End of table */
