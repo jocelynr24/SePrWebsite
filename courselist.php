@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<title>Profile</title>
+		<title>List of the courses</title>
 		<link rel="stylesheet" href="style/style.css" type="text/css" />
 	</head>
 	
@@ -24,10 +24,10 @@
 				<center>
 					<h1>List of the courses</h1>
 
-					<table class="courses_table">
+					<table class="table_style">
 						<tr>
-							<th class="courses_th">Course name</th>
-							<th class="courses_th">Short description of the course</th>
+							<th class="table_th">Course name</th>
+							<th class="table_th">Short description of the course</th>
 						</tr>
 						<?php
 							require "includes/config/config.php";
@@ -35,7 +35,7 @@
 
 							$request = $PDO->query("SELECT * FROM course ORDER BY ID");
 							while ($row = $request->fetch(PDO::FETCH_ASSOC)){
-								echo '<tr><td class="courses_td"><a href="course.php?id='.$row['id'].'">'.$row['name'].'</a></td><td class="courses_td">'.$row['description_short'].'</td>';
+								echo '<tr><td class="table_td"><a href="coursedetail.php?id='.$row['id'].'">'.$row['name'].'</a></td><td class="table_td">'.$row['description_short'].'</td>';
 							}
 							$request->closeCursor();
 						?>

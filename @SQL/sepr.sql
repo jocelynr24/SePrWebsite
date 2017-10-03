@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2017 at 04:28 PM
+-- Generation Time: Oct 03, 2017 at 05:29 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -80,7 +80,7 @@ CREATE TABLE `grade` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `login` char(20) DEFAULT NULL,
-  `password` char(20) DEFAULT NULL,
+  `password` char(32) DEFAULT NULL,
   `email` char(50) DEFAULT NULL,
   `role` int(1) DEFAULT NULL,
   `firstname` char(20) DEFAULT NULL,
@@ -93,9 +93,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `role`, `firstname`, `lastname`, `picture_name`) VALUES
-(1, 'admin', 'admin', 'Michel.Dupont@fontys.nl', 1, 'Michel', 'Dupont', NULL),
-(2, 'teacher', 'teacher', 'Zakia.Kazi-Aoul@fontys.nl', 2, 'Zakia', 'Kazi-Aoul', NULL),
-(3, 'student', 'student', 'Thierry.Henry@fontys.nl', 3, 'Thierry', 'Henry', NULL);
+(1, 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', 'Michel.Dupont@fontys.nl', 1, 'Michel', 'Dupont', NULL),
+(2, 'teacher', '5f4dcc3b5aa765d61d8327deb882cf99', 'Zakia.Kazi-Aoul@fontys.nl', 2, 'Zakia', 'Kazi-Aoul', NULL),
+(3, 'student', '5f4dcc3b5aa765d61d8327deb882cf99', 'Thierry.Henry@fontys.nl', 3, 'Thierry', 'Henry', NULL);
 
 -- --------------------------------------------------------
 

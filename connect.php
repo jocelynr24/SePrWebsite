@@ -5,6 +5,11 @@
 	<head>
 		<title>Connect</title>
 		<link rel="stylesheet" href="style/style.css" type="text/css" />
+		<?php
+			if((isset($_SESSION["ack_connect"])) && ($_SESSION["ack_connect"] == "Ok")){
+				echo '<meta http-equiv="refresh" content="1; URL=index.php" />';
+			}
+		?>
 	</head>
 	
 	<body>
@@ -27,7 +32,7 @@
 				
 				<center>
 					<?php
-						if(isset($_SESSION["ack_connect"])){
+						if((isset($_SESSION["ack_connect"])) && ($_SESSION["ack_connect"] != "Ok")){
 							echo '<div class="acknowledge">'.$_SESSION["ack_connect"].'</div><br/>';
 							unset($_SESSION["ack_connect"]);
 						}
@@ -36,26 +41,31 @@
 				
 				<center>
 				<?php
-					if (isset($_SESSION["logged"])){
+					if((isset($_SESSION["ack_connect"])) && ($_SESSION["ack_connect"] == "Ok")){
+						echo 'You will be redirected on the main page...';
+						unset($_SESSION["ack_connect"]);
+					} else if(isset($_SESSION["logged"])){
 						echo 'You are already logged as <b>'.$_SESSION['user'].'</b>!<br/><a href="index.php">Go to home page</a><br/><a href="disconnect.php">Disconnect</a>';
 					} else {
 						echo '
 						<form action="includes/dynamic/connect_request.php" method="post" name="identification">
-							<table>
-								<tr>
-									<td class="texte">Username:</td>
-									<td><input type="text" name="login" required></td>
-								</tr>    
-								<tr>
-									<td class="texte">Password:</td>
-									<td><input type="password" name="password" required></td>
-								</tr>
-								<tr>
-									<td align= "center" colspan="2">
-										<br/><input type="submit" name="check"  value="Connect"/>
-									</td>
-								</tr>
-							</table>
+							<fieldset><legend>Connect</legend>
+								<table>
+									<tr>
+										<td class="texte">Username:</td>
+										<td><input type="text" name="login" required></td>
+									</tr>    
+									<tr>
+										<td class="texte">Password:</td>
+										<td><input type="password" name="password" required></td>
+									</tr>
+									<tr>
+										<td align= "center" colspan="2">
+											<br/><input type="submit" name="check"  value="Connect"/>
+										</td>
+									</tr>
+								</table>
+							</fieldset>
 						</form>
 						';
 					}

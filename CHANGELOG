@@ -1,3 +1,17 @@
+Version 0.5.0 - 03/10/2017
+==========================
++ Add users administration for administrators
+  > Possibility to create a new account
+  > Possibility to change information of an account
+  > Possibility to remove an account
++ Add token system in forms
++ Add MD5 encyption for passwords encryption
+~ Change forms presentation
+~ Change course detail style
+~ Change "Go back..." button style
+~ Change way of deleting picture (checkbox buttons to radio buttons)
+
+
 Version 0.4.1 - 29/09/2017
 ==========================
 + Add error or success messages on connection page
