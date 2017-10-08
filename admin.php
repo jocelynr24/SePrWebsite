@@ -29,11 +29,12 @@
 							echo '
 								<fieldset><legend>Users administration</legend>
 									<a href="admin_userlist.php">User list</a><br/>
-									<a href="admin_useradd.php">Add a user</a>
+									<a href="admin_useradd.php">Add a user</a><br/>
+									<a href="admin_usercourse.php">Assign teacher/student to course</a>
 								</fieldset>
 								<br/>
 								<fieldset><legend>Courses administration</legend>
-									<a href="admin_courselist.php">Course list</a>
+									<a href="admin_courselist.php">Course list</a><br/>
 								</fieldset>
 							';
 						}
