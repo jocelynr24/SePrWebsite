@@ -31,7 +31,7 @@
 							unset($_SESSION["ack_addtea"]);
 						}
 						if (isset($_SESSION["ack_addstu"])){
-							echo '<br/>'.$_SESSION["ack_addstu"].'</div><br/>';
+							echo '<div class="acknowledge">'.$_SESSION["ack_addstu"].'</div><br/>';
 							unset($_SESSION["ack_addstu"]);
 						} else {
 							echo '</div><br/>';

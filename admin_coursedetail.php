@@ -31,12 +31,6 @@
 							echo '<div class="acknowledge">'.$_SESSION["ack_acuoth"];
 							unset($_SESSION["ack_acuoth"]);
 						}
-						if (isset($_SESSION["ack_acupic"])){
-							echo '<br/>'.$_SESSION["ack_acupic"].'</div><br/>';
-							unset($_SESSION["ack_acupic"]);
-						} else {
-							echo '</div><br/>';
-						}
 				?>
 				</center>
 					

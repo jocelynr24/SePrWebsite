@@ -14,7 +14,7 @@
 					} else if($_SESSION["role"] == 2){
 						echo "<li><a href=\"index.php\">Home</a></li>";
 						echo "<li><a href=\"courselist.php\">Course list</a></li>";
-						echo "<li><a href=\"grade.php\">Manage grades</a></li>";
+						echo "<li><a href=\"teacher_courses.php\">Manage grades</a></li>";
 						echo "<li><a href=\"profile.php\">Profile</a></li>";
 						echo "<li><a href=\"disconnect.php\">Disconnect</a></li>";
 					} else {

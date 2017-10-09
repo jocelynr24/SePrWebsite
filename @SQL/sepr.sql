@@ -55,20 +55,8 @@ INSERT INTO `course` (`id`, `name`, `description_short`, `description_long`) VAL
 
 CREATE TABLE `course_list` (
   `id_User` int(11) NOT NULL,
-  `id_Course` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `grade`
---
-
-CREATE TABLE `grade` (
-  `id` int(11) NOT NULL,
-  `id_Course` int(11) DEFAULT NULL,
-  `id_User` int(11) DEFAULT NULL,
-  `Value` float DEFAULT NULL
+  `id_Course` int(11) NOT NULL,
+  `grade` int(11) NULL;
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

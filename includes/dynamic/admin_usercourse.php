@@ -15,9 +15,11 @@ if(isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) && ($_SESSION['token']
 	$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
 	
 	if($_POST["teacher"] != null){
-		$request_insert = $PDO->query('INSERT INTO course_list VALUES ('.$teacher.','.$course.');');
+		$request_insert = $PDO->query('INSERT INTO course_list VALUES ('.$teacher.','.$course.', NULL);');
+		$_SESSION["ack_addtea"] = "Teacher added to this course!";
 	} else {
-		$request_insert2 = $PDO->query('INSERT INTO course_list VALUES ('.$student.','.$course_student.');' );
+		$request_insert2 = $PDO->query('INSERT INTO course_list VALUES ('.$student.','.$course_student.', NULL);' );
+		$_SESSION["ack_addstu"] = "Student added to this course!";
 	}
 }
 
