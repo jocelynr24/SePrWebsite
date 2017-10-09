@@ -28,9 +28,9 @@ if(($check=="Update") && isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) 
 	$error_others = FALSE;
 	
 	// Check if login already exists
-	$request = $PDO->prepare('SELECT id FROM users WHERE login=:login');
+	$request = $PDO->prepare('SELECT id FROM course WHERE name=:coursename');
 	$request->execute(array(
-		'login'=> $login
+		'name'=> $coursename
 	));
 	if($row = $request->fetch(PDO::FETCH_ASSOC)){
 		$retid = $row['id'];
@@ -43,10 +43,7 @@ if(($check=="Update") && isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) 
 		if(($password == $confirm_password) && (strpos($password, '<script>') === false)
 		&& (strpos($login, '<script>') === false) && (!empty($login))
 		&& (strpos($firstname, '<script>') === false) && (!empty($firstname))
-		&& (strpos($lastname, '<script>') === false) && (!empty($lastname))
-		&& (strpos($role, '<script>') === false) && (!empty($role))
-		&& (strpos($email, '<script>') === false) && (!empty($email))
-		&& (filter_var($email, FILTER_VALIDATE_EMAIL)) && (preg_match($pattern, $email) === 1)){
+		&& (strpos($lastname, '<script>') === false) && (!empty($lastname))){
 			
 		// Change the password if input is not empty
 		if(!empty($password)){

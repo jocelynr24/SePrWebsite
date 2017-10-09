@@ -51,28 +51,14 @@
 						
 					
 					if($user_exists == TRUE){
-						switch($role){
-							case 1:
-								$role_desc = "Administrator";
-							break;
-							case 2:
-								$role_desc = "Teacher";
-							break;
-							case 3:
-								$role_desc = "Student";
-							break;
-							default:
-								$role_desc = "Unknown";
-							break;
-						}
-					
+											
 						echo '
-						<form action="includes/dynamic/admin_userupdate.php" method="post" name="userchange" enctype="multipart/form-data">
+						<form action="includes/dynamic/admin_courseupdate.php" method="post" name="coursechange" enctype="multipart/form-data">
 							<fieldset><legend>Change information</legend>
 								<table>
 									<tr>
 										<td class="texte">Change course name :</td>
-										<td><input type="text" name="login" value='.$login.' placeholder="Course name" required></td>
+										<td><input type="text" name="coursname" value='.$name.' placeholder="Course name" required></td>
 									</tr>
 									<tr>
 										<td>Change password:</td>

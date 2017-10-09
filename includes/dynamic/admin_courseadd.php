@@ -22,7 +22,7 @@ if(($submit=="Add course") && isset($_SESSION["logged"]) && ($_SESSION["role"] =
 	// We check if everything is correct
 	if((strpos($coursename, '<script>') === false) && !empty($coursename) &&
 	   (strpos($shortdesc, '<script>') === false) && !empty($shortdesc) &&
-	   (strpos($longdesc, '<script>') === false) && !empty($longdesc){
+	   (strpos($longdesc, '<script>') === false) && !empty($longdesc)){
 		
 		$request_chkcourse = $PDO->prepare('SELECT name FROM course WHERE name=:coursename');
 		$request_chkcourse->execute(array(
@@ -35,9 +35,9 @@ if(($submit=="Add course") && isset($_SESSION["logged"]) && ($_SESSION["role"] =
 		} else {
 			$request_addcourse = $PDO->prepare('INSERT INTO course (id, name, description_short, description_long) VALUES (NULL, :coursename, :shortdesc, :longdesc)');
 			$request_addcourse->execute(array(
-				'name' => $coursename,
-				'description_short'=> $shortdesc,
-				'description_long'=> $longdesc,
+				'coursename' => $coursename,
+				'shortdesc'=> $shortdesc,
+				'longdesc'=> $longdesc,
 				));
 			$_SESSION["ack_addcourse"] = "Course added!";
 		}
