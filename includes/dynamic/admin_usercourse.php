@@ -16,8 +16,10 @@ if(isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) && ($_SESSION['token']
 	
 	if($_POST["teacher"] != null){
 		$request_insert = $PDO->query('INSERT INTO course_list VALUES ('.$teacher.','.$course.');');
+		$_SESSION["ack_addtea"] = "Teacher added to this course!";
 	} else {
 		$request_insert2 = $PDO->query('INSERT INTO course_list VALUES ('.$student.','.$course_student.');' );
+		$_SESSION["ack_addstu"] = "Student added to this course!";
 	}
 }
 

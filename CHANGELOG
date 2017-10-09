@@ -1,6 +1,7 @@
 Version 0.6.2 - 09/10/2017
 ==========================
-~ Change SQL request
++ Add return message for student/teacher add to course
+~ Change SQL request for adding student to course
 
 
 Version 0.6.1 - 08/10/2017
