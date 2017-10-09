@@ -50,72 +50,31 @@
 					$token = $_SESSION['token'] = md5(uniqid(mt_rand(),true));
 						
 					
-					if($user_exists == TRUE){
+					if($course_exists == TRUE){
 											
 						echo '
-						<form action="includes/dynamic/admin_courseupdate.php" method="post" name="coursechange" enctype="multipart/form-data">
-							<fieldset><legend>Change information</legend>
+						<form action="includes/dynamic/admin_courseupdate.php" method="post" name="coursechange">
+							<fieldset><legend>Change course information</legend>
 								<table>
 									<tr>
 										<td class="texte">Change course name :</td>
-										<td><input type="text" name="coursname" value='.$name.' placeholder="Course name" required></td>
+										<td><input type="text" name="coursename" value="'.$name.'" placeholder="Course name" required></td>
 									</tr>
 									<tr>
-										<td>Change password:</td>
-										<td><input type="password" placeholder="Password (6 char. min.)" name="password" pattern=".{6,20}"></td>
-									</tr>   
-									<tr>
-										<td>Confirm password:</td>
-										<td><input type="password" placeholder="Confirm password" name="confirm_password" pattern=".{6,12}"></td>
+										<td class="texte">Change short <br/>description :</td>
+										<td><textarea name="shortdesc" rows="3" cols="20" placeholder="Set the short description" required>'.htmlspecialchars($shortdesc).'</textarea></td>
 									</tr>
 									<tr>
-										<td class="texte">Change first name:</td>
-										<td><input type="text" name="firstname" value='.$firstname.' placeholder="First name" required></td>
+										<td class="texte">Change long <br/>description :</td>
+										<td><textarea name="longdesc" rows="12" cols="25" placeholder="Set the long description" required>'.htmlspecialchars($longdesc).'</textarea></td>
 									</tr>
-									<tr>
-										<td class="texte">Change last name:</td>
-										<td><input type="text" name="lastname" value='.$lastname.' placeholder="Last name" required></td>
-									</tr>
-									<tr>
-										<td class="texte">Change email:</td>
-										<td><input type="text" name="email" value='.$email.' placeholder="Email" required></td>
-									</tr>
-									<tr>
-										<td class="texte">Change role:</td>
-										<td>
-											<select name="role" style="width: 173px;" required>
-												<option value='.$role.'>No change ('.$role_desc.')</option>
-												<option value="1">Administrator</option>
-												<option value="2">Teacher</option>
-												<option value="3">Student</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>Change picture:</td>
-							';
-							if(!empty($picture_name)){
-								$picture_path = "uploads/profile/".$picture_name;
-								echo '	<td><img src='.$picture_path.' style="width:172px;height:100px;>
-											<br/><input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-											<br/><input type="file" name="file_to_upload" style="width: 172px;"></td>
-									</tr>';
-							} else {
-								echo '	<td><input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-											<input type="file" name="file_to_upload" style="width: 172px;"></td>
-									</tr>';
-							}
-							echo '
-									<tr>
-										<td>Remove picture:</td>
-										<td><input type="radio" name="file_to_remove" value="yes">Yes <input type="radio" name="file_to_remove" value="no" checked>No</td>
-									</tr>
+									
 									<tr>
 									<tr>
 										<td align= "center" colspan="2">
 											<input type="hidden" name="token" value='.$token.'>
 											<input type="hidden" name="id" value='.$id.'>
-											<br/><input type="submit" name="check" value="Update"/>
+											<br/><input type="submit" name="check" value="Update course"/>
 										</td>
 									</tr>
 								</table>
@@ -124,27 +83,27 @@
 						';
 						echo "<br/><br/>";
 						echo '
-						<form action="includes/dynamic/admin_userdelete.php" method="post" name="userdelete">
-							<fieldset><legend>Delete this user</legend>
+						<form action="includes/dynamic/admin_coursedelete.php" method="post" name="coursedelete">
+							<fieldset><legend>Delete this course</legend>
 								<table>
 									<tr>
 										<td class="texte">Are you sure?</td>
-										<td><input type="radio" name="delete" value="yes">Yes <input type="radio" name="file_to_remove" value="no" checked>No</td>
+										<td><input type="radio" name="delete" value="yes">Yes <input type="radio" name="delete" value="no" checked>No</td>
 									</tr>
 									<td align= "center" colspan="2">
 										<input type="hidden" name="id" value='.$id.'>
 										<input type="hidden" name="token" value='.$token.'>
-										<br/><input type="submit" name="check" value="Delete"/>
+										<br/><input type="submit" name="check" value="Delete course"/>
 									</td>
 								</table>
 							</fieldset>
 						</form>
 						';
 						echo'
-							<br/><br/><a href="admin_userlist.php"><div class="back">< Go back to the list of the users</div></a>
+							<br/><br/><a href="admin_courselist.php"><div class="back">< Go back to the list of the course</div></a>
 						';
 					} else {
-						echo 'This user doesn\'t exist!';
+						echo 'This course doesn\'t exist!';
 					}
 				} else {
 					echo 'You are not authorized to access this page!<br/><a href="index.php">Go to home page</a>';

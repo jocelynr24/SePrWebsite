@@ -10,7 +10,7 @@ $check = $_POST["check"];
 $token = $_POST["token"];
 
 // If the user is authorized to access this page
-if(($check=="Delete") && isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) && ($_SESSION['token'] == $token)){
+if(($check=="Delete course") && isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) && ($_SESSION['token'] == $token)){
 	// PDO connect method
 	// Connection to the database
 	require "../config/config.php";
@@ -22,9 +22,9 @@ if(($check=="Delete") && isset($_SESSION["logged"]) && ($_SESSION["role"] == 1) 
 		$request_delete->execute(array(
 		'id' => $id
 		));
-		$_SESSION["ack_delusr"] = "Course deleted!";
+		$_SESSION["ack_delcourse"] = "Course deleted!";
 	} else {
-	$_SESSION["ack_delusr"] = "Course not deleted!";
+	$_SESSION["ack_delcourse"] = "Course not deleted!";
 	}
 }
 

@@ -21,9 +21,9 @@ if(isset($_SESSION["logged"]) && ($_SESSION["role"] == 1)){
 			$longdesc = $row['description_long'];
 		}
 		$request->closeCursor();
-		$user_exists = TRUE;
+		$course_exists = TRUE;
 	} else {
-		$user_exists = FALSE;
+		$course_exists = FALSE;
 	}
 	
 }
