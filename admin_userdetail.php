@@ -143,7 +143,7 @@
 								<table>
 									<tr>
 										<td class="texte">Are you sure?</td>
-										<td><input type="radio" name="delete" value="yes">Yes <input type="radio" name="file_to_remove" value="no" checked>No</td>
+										<td><input type="radio" name="delete" value="yes">Yes <input type="radio" name="delete" value="no" checked>No</td>
 									</tr>
 									<td align= "center" colspan="2">
 										<input type="hidden" name="id" value='.$id.'>
