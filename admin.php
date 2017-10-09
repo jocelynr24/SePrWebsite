@@ -34,6 +34,7 @@
 								</fieldset>
 								<br/>
 								<fieldset><legend>Courses administration</legend>
+									<a href="admin_courseadd.php">Add a course</a><br/>
 									<a href="admin_courselist.php">Course list</a><br/>
 								</fieldset>
 							';
