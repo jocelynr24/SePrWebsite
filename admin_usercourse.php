@@ -130,11 +130,7 @@
 							die('Erreur : '.$e->getMessage());
 						}
 
-						$reponse = $PDO->prepare('SELECT * FROM course WHERE id NOT IN ( 
-															select id_course from course_list, users 
-															where course_list.id_User = users.id
-															and role = 3) ORDER BY NAME'
-												);
+						$reponse = $PDO->prepare('SELECT * FROM course ORDER BY NAME');
 						$reponse->execute();
 						
 						foreach ($reponse as $donnees)
