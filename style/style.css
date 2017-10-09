@@ -199,7 +199,19 @@ html>body #menu li ul ul {
 	border-collapse: collapse;
 	width: 80%;
 	}
+
+.table_teacher_course {
+	border: 1px solid #3F1547;
+	border-collapse: collapse;
+	width: 300px;
+	}
 	
+.table_teacher_grade {
+	border: 1px solid #3F1547;
+	border-collapse: collapse;
+	width: 600px;
+	}
+
 .table_th {
 	border: 1px solid #3F1547;
 	padding: 5px;
@@ -211,6 +223,14 @@ html>body #menu li ul ul {
 	border: 1px solid #3F1547;
 	padding: 5px;
 	text-align: left;
+	background-color: #714779;
+	color: #ffffff;
+	}
+	
+.table_td_center {
+	border: 1px solid #3F1547;
+	padding: 5px;
+	text-align: center;
 	background-color: #714779;
 	color: #ffffff;
 	}
