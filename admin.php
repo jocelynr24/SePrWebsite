@@ -30,12 +30,19 @@
 								<fieldset><legend>Users administration</legend>
 									<a href="admin_userlist.php">User list</a><br/>
 									<a href="admin_useradd.php">Add a user</a><br/>
+<<<<<<< HEAD
 									<a href="admin_usercourse.php">Assign teacher/student to course</a><br/>
 									<a href="removecourselist.php">Remove student/teacher from course</a><br/>
 								</fieldset>
 								<br/>
 								<fieldset><legend>Courses administration</legend>
 									<a href="admin_courseadd.php">Add a course</a><br/>
+=======
+									<a href="admin_usercourse.php">Assign teacher/student to course</a>
+								</fieldset>
+								<br/>
+								<fieldset><legend>Courses administration</legend>
+>>>>>>> c875643a10d1b10ac71447677389eed81040db03
 									<a href="admin_courselist.php">Course list</a><br/>
 								</fieldset>
 							';
