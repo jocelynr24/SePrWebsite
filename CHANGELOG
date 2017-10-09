@@ -1,3 +1,28 @@
+Version 0.6.3 - 09/10/2017
+==========================
+~ Change one field name in user delete
+
+
+Version 0.6.2 - 09/10/2017
+==========================
++ Add return message for student/teacher add to course
+~ Change SQL request for adding student to course
+
+
+Version 0.6.1 - 08/10/2017
+==========================
++ Add token to users courses administration page
+~ Change form presentation of users courses administration page
+~ Change access to users courses administration page to only administrators
+~ Change some parts of the style
+
+
+Version 0.6.0 - 07/10/2017
+==========================
++ Add possibility to link teacher to a course
++ Add possibility to link student to a course
+
+
 Version 0.5.0 - 03/10/2017
 ==========================
 + Add users administration for administrators
