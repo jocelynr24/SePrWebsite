@@ -22,28 +22,24 @@
 				<br/><br/>
 
 				<center>
-					<h1>Administration of the platform</h1>
+					<h1>From which course do you want to remove a teacher or a user ?</h1>
 				
 					<?php
 						if (isset($_SESSION["logged"]) && ($_SESSION["role"] == 1)){
-							echo '
-								<fieldset><legend>Users administration</legend>
-									<a href="admin_userlist.php">User list</a><br/>
-									<a href="admin_useradd.php">Add a user</a><br/>
-									<a href="admin_usercourse.php">Assign teacher/student to course</a><br/>
-									<a href="removecourselist.php">Remove student/teacher from course</a><br/>
-								</fieldset>
-								<br/>
-								<fieldset><legend>Courses administration</legend>
-									<a href="admin_courseadd.php">Add a course</a><br/>
-									<a href="admin_usercourse.php">Assign teacher/student to course</a>
-								</fieldset>
-								<br/>
-								<fieldset><legend>Courses administration</legend>
-									<a href="admin_courseadd.php">Add a course</a><br/>
-									<a href="admin_courselist.php">Course list</a><br/>
-								</fieldset>
-							';
+							
+
+							require "includes/config/config.php";
+							$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
+
+							$request = $PDO->query("SELECT * FROM course ORDER BY ID");
+							while ($row = $request->fetch(PDO::FETCH_ASSOC)){
+								echo '<tr><td class="table_td"><a href="admin_removefromcourse.php?idcourse='.$row['id'].'">'.$row['name'].'</a></td>';
+							}
+							$request->closeCursor();
+						
+
+
+
 						}
 						else{
 							echo 'You are not authorized to access this page!<br/><a href="index.php">Go to home page</a>';
