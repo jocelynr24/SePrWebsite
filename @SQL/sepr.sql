@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: studmysql01.fhict.local
--- Generation Time: Oct 10, 2017 at 06:43 AM
+-- Generation Time: Oct 10, 2017 at 07:47 AM
 -- Server version: 5.7.13-log
 -- PHP Version: 5.6.27
 
@@ -79,9 +79,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`, `email`, `role`, `firstname`, `lastname`, `picture_name`) VALUES
-(1, 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', 'Michel.Dupont@fontys.nl', 1, 'Michel', 'Dupont', NULL),
-(2, 'teacher', '5f4dcc3b5aa765d61d8327deb882cf99', 'Zakia.Kazi-Aoul@fontys.nl', 2, 'Zakia', 'Kazi-Aoul', NULL),
-(3, 'student', '5f4dcc3b5aa765d61d8327deb882cf99', 'Thierry.Henry@fontys.nl', 3, 'Thierry', 'Henry', NULL);
+(1, 'recoveryaccount', 'e3f66746721aac8015934fcc5ffd4cdd', NULL, 1, NULL, NULL, NULL),
+(2, 'moulinj', '052b904fbaf7fa578af4ebeaecf11354', 'Jean.Moulin@fontys.nl', 1, 'Jean', 'Moulin', NULL),
+(3, 'henryt', '166f852f8751bb71e2dd0a3beed24f00', 'Thierry.Henry@fontys.nl', 2, 'Thierry', 'Henry', NULL),
+(4, 'raquilm', '9947dc3c1ad037ae3e164ad3b81c517e', 'Marc.Raquil@student.fontys.nl', 3, 'Marc', 'Raquil', NULL),
+(5, 'thillmanel', '9947dc3c1ad037ae3e164ad3b81c517e', 'Laury.Thillmane@fontys.nl', 1, 'Laury', 'Thillmane', NULL),
+(6, 'franka', '91a5bd179cf381ed111a22de7de8731a', 'Anne.Frank@fontys.nl', 2, 'Anne', 'Frank', NULL),
+(7, 'jacqueta', 'dd2864685ae2eb88d6dfe3fa6ae5ebec', 'Aimé.Jacquet@student.fontys.nl', 3, 'Aimé', 'Jacquet', NULL);
 
 -- --------------------------------------------------------
 
@@ -137,7 +141,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
