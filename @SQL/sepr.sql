@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 03, 2017 at 05:29 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Host: studmysql01.fhict.local
+-- Generation Time: Oct 10, 2017 at 06:43 AM
+-- Server version: 5.7.13-log
+-- PHP Version: 5.6.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,10 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sepr`
+-- Database: `dbi398507`
 --
-CREATE DATABASE IF NOT EXISTS `sepr` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `sepr`;
 
 -- --------------------------------------------------------
 
@@ -56,7 +54,7 @@ INSERT INTO `course` (`id`, `name`, `description_short`, `description_long`) VAL
 CREATE TABLE `course_list` (
   `id_User` int(11) NOT NULL,
   `id_Course` int(11) NOT NULL,
-  `grade` int(11) NULL;
+  `grade` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -114,13 +112,6 @@ ALTER TABLE `course_list`
   ADD KEY `id_Course` (`id_Course`);
 
 --
--- Indexes for table `grade`
---
-ALTER TABLE `grade`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_Course` (`id_Course`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -142,11 +133,6 @@ ALTER TABLE `user_has_grade`
 --
 ALTER TABLE `course`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `grade`
---
-ALTER TABLE `grade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
