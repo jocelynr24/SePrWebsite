@@ -43,7 +43,7 @@ if(($check=="Add user") && isset($_SESSION["logged"]) && ($_SESSION["role"] == 1
 				'login' => $login,
 				'firstname'=> $firstname,
 				'lastname'=> $lastname,
-				'password'=> $password,
+				'password'=> MD5($password),
 				'email'=> $email,
 				'role'=> $role
 				));

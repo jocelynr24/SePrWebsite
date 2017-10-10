@@ -1,3 +1,21 @@
+Version 0.8.1 - 09/10/2017
+==========================
+~ Bug correction (admin.php and MD5 at account creation)
+
+
+Version 0.8.0 - 09/10/2017
+==========================
+* Modif dans la page adin.php pour ajouter le lien vers la fonctionnalité
+* Page ou il y a la liste des cours dispos, il faut choisir celui dans lequel on veut supprimer un mec
+* Page sur laquelle on fait la modification
+* Page dans le include/dynamic avec la suppression dans la BBD
+
+
+Version 0.7.0 - 09/10/2017
+==========================
+* Add course management functionalities
+
+
 Version 0.6.3 - 09/10/2017
 ==========================
 ~ Change one field name in user delete
