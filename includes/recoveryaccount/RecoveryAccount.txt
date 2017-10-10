@@ -1,0 +1,3 @@
+Recovery account:
+ - Login: recoveryaccount
+ - Password: _xP[v64%52AxLGi
