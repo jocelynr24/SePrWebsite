@@ -1,3 +1,9 @@
+Version 0.8.3 - 24/10/2017
+==========================
+- Remove CSRF issue
+- Remove PT issue
+
+
 Version 0.8.2 - 09/10/2017
 ==========================
 ~ Bug correction
