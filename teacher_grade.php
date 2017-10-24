@@ -24,14 +24,27 @@
 				<center>
 					
 					<?php
+					$url = $_SERVER['REQUEST_URI'];
+					
 					$course_id = $_GET['id'];
-					$course_name = $_GET['name'];
+					$course_id = htmlspecialchars($course_id, ENT_QUOTES, 'UTF-8');
+					$course_name = '';
+					require "includes/config/config.php";
+					$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
+								
+					$request = $PDO->prepare('SELECT name FROM course WHERE id=:id');
+					$request->execute(array(
+						'id' => $course_id
+					));
+					while ($row = $request->fetch(PDO::FETCH_ASSOC)){
+						$course_name = $row['name'];
+					}
+					$request->closeCursor();
 					echo'<h1>List of student in the course '.$course_name.'</h1>
 					
 					<br/>';
 					
 					if (isset($_SESSION["logged"]) && ($_SESSION["role"] == 2)){
-						
 						echo'<table class="table_teacher_grade">
 							<tr>
 								<th class="table_th">Student</th>
@@ -39,16 +52,21 @@
 								<th class="table_th"></th>
 							</tr>';
 							
-								require "includes/config/config.php";
 								$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
 								
-								$request = $PDO->query('SELECT users.firstname, users.lastname, users.id, course_list.grade FROM users, course_list, course WHERE course_list.id_User = users.id AND course_list.id_Course = course.id AND course.name= "'.$course_name.'" AND users.role = 3');	
+								$request = $PDO->query('SELECT users.firstname, users.lastname, users.id, course_list.grade FROM users, course_list, course WHERE course_list.id_User = users.id AND course_list.id_Course = course.id AND course.id= "'.$course_id.'" AND users.role = 3');	
 								while ($row = $request->fetch(PDO::FETCH_ASSOC)){
 									echo '
 									<tr>
 									<td class="table_td_center"><p>'.$row['firstname'].' '.$row['lastname'].'</p></td>
 									<td class="table_td_center"><p>'.$row['grade'].'</p></td>
-									<td class="table_td_center"><button><a href="teacher_updategrade.php?course_id='.$course_id.'&course_name='.$course_name.'&student_id='.$row['id'].'" style="color:black">Update</a></button></td>
+									<td class="table_td_center">
+									<form action="teacher_updategrade.php" method="GET">
+										<input type="hidden" name="course_id" value="1" /> 
+										<input type="hidden" name="student_id" value="'.$row['id'].'" /> 
+										<input type="submit" value="Update" />
+									</form>
+									</td>
 									</tr>';
 								}
 								$request->closeCursor();

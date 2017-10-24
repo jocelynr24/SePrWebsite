@@ -36,7 +36,7 @@
 								
 								$request = $PDO->query('SELECT course.id, course.name FROM course, course_list, users WHERE course.id = course_list.id_Course AND course_list.id_User = users.id AND users.login = "'.$_SESSION["user"].'"');	
 								while ($row = $request->fetch(PDO::FETCH_ASSOC)){
-									echo '<tr><td class="table_td"><a href="teacher_grade.php?id='.$row['id'].'&name='.$row['name'].'">'.$row['name'].'</a></td></tr>';
+									echo '<tr><td class="table_td"><a href="teacher_grade.php?id='.$row['id'].'">'.$row['name'].'</a></td></tr>';
 								}
 								$request->closeCursor();
 								

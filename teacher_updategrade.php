@@ -25,11 +25,11 @@
 					
 					<?php
 					$course_id = $_GET['course_id'];
-					$course_name = $_GET['course_name'];
+					$course_id = htmlspecialchars($course_id, ENT_QUOTES, 'UTF-8');
 					$student_id= $_GET['student_id'];
-					echo'<h1>List of student in the course '.$course_name.'</h1>
+					$student_id = htmlspecialchars($student_id, ENT_QUOTES, 'UTF-8');
 					
-					<br/>';
+					echo'<br/><br/>';
 					
 					if (isset($_SESSION["logged"]) && ($_SESSION["role"] == 2)){
 						
@@ -76,8 +76,7 @@
 						echo'</table>
 						<br/><br/>
 						<input type="hidden" name="id_User" value="'.$student_id.'"/>
-						<input type="hidden" name="id_Course" value="'.$course_id.'"/>
-						<input type="hidden" name="name_Course" value="'.$course_name.'"/>';
+						<input type="hidden" name="id_Course" value="'.$course_id.'"/>';
 						$request2 = $PDO->query('SELECT role FROM users WHERE id = "'.$student_id.'"');
 							while ($row2 = $request2->fetch(PDO::FETCH_ASSOC)){
 								if($row2['role'] == 3){
