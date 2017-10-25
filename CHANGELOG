@@ -1,3 +1,10 @@
+Version 0.8.4 - 25/10/2017
+==========================
++ Protected XSS failure in teacher update grade
++ Added token to update grade
+~ Redirected the page to teacher course
+
+
 Version 0.8.3 - 24/10/2017
 ==========================
 - Remove CSRF issue
