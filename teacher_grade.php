@@ -28,18 +28,9 @@
 					
 					$course_id = $_GET['id'];
 					$course_id = htmlspecialchars($course_id, ENT_QUOTES, 'UTF-8');
-					$course_name = '';
-					require "includes/config/config.php";
-					$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
-								
-					$request = $PDO->prepare('SELECT name FROM course WHERE id=:id');
-					$request->execute(array(
-						'id' => $course_id
-					));
-					while ($row = $request->fetch(PDO::FETCH_ASSOC)){
-						$course_name = $row['name'];
-					}
-					$request->closeCursor();
+					$course_name = $_GET['name'];
+					$course_name = htmlspecialchars($course_name, ENT_QUOTES, 'UTF-8');
+					
 					echo'<h1>List of student in the course '.$course_name.'</h1>
 					
 					<br/>';
