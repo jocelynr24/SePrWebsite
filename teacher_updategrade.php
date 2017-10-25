@@ -32,6 +32,8 @@
 					echo'<br/><br/>';
 					
 					if (isset($_SESSION["logged"]) && ($_SESSION["role"] == 2)){
+						// Generate a token for this form
+						$token = $_SESSION['token'] = md5(uniqid(mt_rand(),true));
 						
 						echo '
 						<form action="includes/dynamic/teacher_gradeadd.php" method="post" name="gradeadd">
@@ -76,7 +78,8 @@
 						echo'</table>
 						<br/><br/>
 						<input type="hidden" name="id_User" value="'.$student_id.'"/>
-						<input type="hidden" name="id_Course" value="'.$course_id.'"/>';
+						<input type="hidden" name="id_Course" value="'.$course_id.'"/>
+						<input type="hidden" name="token" value='.$token.'>';
 						$request2 = $PDO->query('SELECT role FROM users WHERE id = "'.$student_id.'"');
 							while ($row2 = $request2->fetch(PDO::FETCH_ASSOC)){
 								if($row2['role'] == 3){

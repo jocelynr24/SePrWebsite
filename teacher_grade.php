@@ -62,7 +62,7 @@
 									<td class="table_td_center"><p>'.$row['grade'].'</p></td>
 									<td class="table_td_center">
 									<form action="teacher_updategrade.php" method="GET">
-										<input type="hidden" name="course_id" value="1" /> 
+										<input type="hidden" name="course_id" value="'.$course_id.'" />
 										<input type="hidden" name="student_id" value="'.$row['id'].'" /> 
 										<input type="submit" value="Update" />
 									</form>

@@ -6,6 +6,7 @@ $id_User = $_POST["id_User"];
 $id_Course = $_POST["id_Course"];
 $grade = $_POST["grade"];
 $check = $_POST["check"];
+$token = $_POST["token"];
 
 // Go back to the index
 header("Location: ../../teacher_grade.php?id=".$id_Course);
