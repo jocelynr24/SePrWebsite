@@ -43,6 +43,8 @@
 								<th class="table_th"></th>
 							</tr>';
 							
+								require "includes/config/config.php";
+							
 								$PDO = new PDO('mysql:host='.$server.';dbname='.$base.';charset=utf8', $user, $pass);
 								
 								$request = $PDO->query('SELECT users.firstname, users.lastname, users.id, course_list.grade FROM users, course_list, course WHERE course_list.id_User = users.id AND course_list.id_Course = course.id AND course.id= "'.$course_id.'" AND users.role = 3');	
